@@ -1,0 +1,14 @@
+<%= simple_form_for(@product) do |f| %>
+
+    <%= f.error_notification %>
+    <%= f.input :name-%>
+    <%= f.input :product_code-%>
+    <%= f.input :location,:collection => ["India","Pakistan","Srilanka"],:prompt=>"Select Location"-%>
+    <%= f.input :expiry_date, :input_html => { :class => "datepicker" }-%>
+    <%= f.input :price-%>
+
+
+  <%= link_to raw("<i class='icon-remove'></i> Close"), "#", :class => "btn", :data => { :dismiss => "modal" } -%>
+  <%= f.submit  :class => "btn" -%>  
+  <%= link_to "Go Back", "#", :class => 'btn go-back' %>
+<% end %>
